@@ -1,0 +1,73 @@
+/* ===========================================================================
+   DevWars: Market & Military - TABLET layout (viewport 601px - 1024px)
+   Active only when body[data-layout="tablet"].
+   Shell max-width 720px, centered. MARKET / ARMY screens get a two-column
+   layout: scrollable list on the left, sticky detail panel on the right.
+   =========================================================================== */
+
+body[data-layout="tablet"] {
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+}
+
+body[data-layout="tablet"] #shell {
+  width: 100%;
+  max-width: 720px;
+  height: 100dvh;
+  padding: 16px;
+  gap: 0;
+  border-left: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+}
+
+body[data-layout="tablet"] #topbar {
+  border-radius: 10px 10px 0 0;
+}
+
+body[data-layout="tablet"] #screen {
+  padding: 16px;
+}
+
+/* two-column internal layout for MARKET and ARMY */
+body[data-layout="tablet"] .two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 14px;
+  align-items: start;
+}
+
+body[data-layout="tablet"] .detail-panel {
+  display: block;
+  position: sticky;
+  top: 4px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  max-height: calc(100dvh - 190px);
+  overflow-y: auto;
+}
+
+/* items grid: 2 columns on tablets */
+body[data-layout="tablet"] .items-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* bottom nav keeps the mobile feel; labels sit NEXT to icons above 700px tall */
+body[data-layout="tablet"] #bottomnav {
+  border-radius: 0 0 10px 10px;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+body[data-layout="tablet"] #bottomnav button {
+  flex-direction: column;
+}
+
+@media (min-height: 700px) {
+  body[data-layout="tablet"] #bottomnav button {
+    flex-direction: row;
+    gap: 8px;
+  }
+}
