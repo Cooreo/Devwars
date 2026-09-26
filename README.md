@@ -1,3 +1,4 @@
+# Disclamer: i vibecoded this sh%t out of this :3
 # DevWars: Market & Military
 
 An offline, browser-only stock-trading + army-building game.
