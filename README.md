@@ -5,7 +5,9 @@ Built with **vanilla HTML5, CSS3 and JavaScript ES modules only** -- no framewor
 
 ## Play
 
-Open the GitHub Pages URL for this repository, or run locally:
+Live on GitHub Pages: **https://cooreo.github.io/Devwars/**
+
+Or run locally:
 
 ```sh
 python3 -m http.server 8080
