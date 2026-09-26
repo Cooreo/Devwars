@@ -1,0 +1,72 @@
+/* ===========================================================================
+   DevWars: Market & Military - DESKTOP layout (viewport >= 1025px)
+   Active only when body[data-layout="desktop"].
+   The shell becomes a phone frame floating in a dim terminal-grid
+   "control room". Bottom nav stays inside the shell, sticky at its bottom.
+   =========================================================================== */
+
+body[data-layout="desktop"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+}
+
+body[data-layout="desktop"] #bg-grid {
+  display: block;
+}
+
+body[data-layout="desktop"] #shell {
+  width: 100%;
+  max-width: 420px;
+  height: min(90dvh, 800px);
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(74, 222, 128, 0.08);
+}
+
+body[data-layout="desktop"] #screen {
+  padding: 12px;
+}
+
+/* single-column phone feel inside the frame */
+body[data-layout="desktop"] .two-col {
+  display: block;
+}
+
+body[data-layout="desktop"] .detail-panel {
+  display: none; /* charts open in the modal on the phone frame */
+}
+
+/* items grid: 3 compact columns on desktop */
+body[data-layout="desktop"] .items-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body[data-layout="desktop"] .item-card {
+  padding: 8px;
+}
+body[data-layout="desktop"] .idesc {
+  font-size: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+body[data-layout="desktop"] .item-actions .btn {
+  min-height: 34px;
+  padding: 4px 6px;
+}
+
+body[data-layout="desktop"] #bottomnav {
+  border-radius: 0 0 16px 16px;
+}
+
+body[data-layout="desktop"] #topbar {
+  border-radius: 16px 16px 0 0;
+}
+
+/* modals / drawers hover above the frame nicely */
+body[data-layout="desktop"] .modal {
+  max-width: 400px;
+}

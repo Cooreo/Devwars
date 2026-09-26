@@ -1,0 +1,45 @@
+/* ===========================================================================
+   DevWars: Market & Military - PHONE layout (viewport <= 600px)
+   Active only when body[data-layout="phone"].
+   Full-width shell, 100dvh, single column, fixed bottom nav.
+   =========================================================================== */
+
+body[data-layout="phone"] {
+  width: 100%;
+}
+
+body[data-layout="phone"] #shell {
+  width: 100%;
+  height: 100dvh;
+  border: none;
+  border-radius: 0;
+}
+
+body[data-layout="phone"] #screen {
+  padding: 10px 10px calc(10px + env(safe-area-inset-bottom));
+}
+
+body[data-layout="phone"] #bottomnav {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* single column everywhere on phones */
+body[data-layout="phone"] .two-col {
+  display: block;
+}
+
+body[data-layout="phone"] .detail-panel {
+  display: none; /* stock detail opens in a modal on phones */
+}
+
+body[data-layout="phone"] .items-grid {
+  grid-template-columns: 1fr;
+}
+
+/* every interactive row stays comfortably tappable */
+body[data-layout="phone"] .btn {
+  min-height: 44px;
+}
+body[data-layout="phone"] .chip {
+  min-height: 38px;
+}
